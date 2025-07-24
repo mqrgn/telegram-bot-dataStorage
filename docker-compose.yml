@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  data_storage_bot:
+    build: .
+    container_name: data_storage_bot
+    volumes:
+      - .Data_Storage_DB.db:/bot/data_storage/Data_Storage_DB.db
+    env_file:
+      - .env
+    command: ["python", "main.py"]
